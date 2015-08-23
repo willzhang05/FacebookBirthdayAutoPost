@@ -114,10 +114,10 @@
 
 				<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 				</fb:login-button>
-				<button onclick="var asdf = prompt("stuff"); FB.login(function(){
-				  // Note: The call will only work if you accept the permission request
-				  FB.api('/me/feed', 'post', {message: asdf});
-				}, {scope: 'publish_actions'});"></button>
+				<button onclick="var asdf = prompt("stuff"); 
+					FB.login(function(){
+					  FB.api('/me/feed', 'post', {message: asdf});
+					}, {scope: 'publish_actions'});"></button>
 				<div id="status">
 				</div>
             </div>
