@@ -22,11 +22,10 @@ window.fbAsyncInit = function() {
 }(document));
 
 function Login() {
-
     FB.login(function(response) {
         if (response.authResponse) {
-            /*getUserInfo()*/
-            PostMessage()
+            getUserInfo();
+            postMessage();
 
         } else {
             console.log('Authorization failed.');
@@ -35,7 +34,7 @@ function Login() {
         scope: 'publish_actions'
     });
 }
-/*function getUserInfo() {
+function getUserInfo() {
    FB.api('/me', function(response) {
 					
     //response.name       - User Full name
@@ -45,7 +44,7 @@ function Login() {
     //response.email      - User email
 					
     });
-}*/
+}
 FB.Event.subscribe('auth.authResponseChange', function(response) {
     if (response.status === 'connected') {
         //SUCCESS
@@ -63,7 +62,7 @@ function Logout() {
 
 }
 
-function PostMessage() {
+function postMessage() {
     var fbMessage = document.getElementById("messageToPost").value;
     FB.api('/me/feed', 'post', {
         message: fbMessage
