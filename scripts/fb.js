@@ -25,8 +25,7 @@ function Login() {
     FB.login(function(response) {
         if (response.authResponse) {
             getUserInfo();
-            postMessage();
-
+            location.reload(true);
         } else {
             console.log('Authorization failed.');
         }

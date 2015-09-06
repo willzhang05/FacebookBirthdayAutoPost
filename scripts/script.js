@@ -8,7 +8,7 @@ for (var i = 0; i < 3; i++) {
     } else if (i == 1) {
         template.setAttribute("onclick", "location.href='help.html'");
         template.innerHTML = "Help";
-    } else if (i == 2) {
+    } else {
         template.setAttribute("onclick", "location.href='license.html'");
         template.innerHTML = "License";
     }
