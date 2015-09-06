@@ -69,6 +69,25 @@ a {
     transition: all .2s ease;
     text-decoration: none
 }
+input {
+    font-family: Roboto, Helvetica Neue, Helvetica, sans-serif;
+}
+#messageToPost {
+    border:none;
+    border-bottom:1px solid #3b5998;
+    background-color:#f7f7f7;
+    padding:10px 10px 5px 5px;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+#messageToPost:focus {
+    outline:none;
+}
+
 button {
     background-color: #eee;
     font-family: Roboto, Helvetica Neue, Helvetica, sans-serif;
@@ -82,11 +101,32 @@ button {
     border: none;
     outline: 0
 }
+.fb-buttons {
+    color:white;
+    background-color:#3b5998;
+    padding:5px;
+    border-radius: 2.5px;
+    font-size:11px;
+    font-weight:bold;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.fb-buttons:hover {
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.fb-buttons:active {
+    background-color: #2d4373;
+    -webkit-box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
 .menu-buttons {
     font-size: 16px;
     width: 100%;
     height: 75px;
-    background-color: #eee
+    background-color: #f7f7f7
 }
 .menu-buttons:hover {
     background-color: #e0e0e0
@@ -94,25 +134,27 @@ button {
 .menu-buttons:active {
     background-color: #bdbdbd
 }
-#toggle-button {
+.toggle-buttons {
     width: 40px;
     height: 40px;
     margin: 4px;
     cursor: pointer;
     border-radius: 50%;
     background-color: #3b5998;
-    background-image: url('../images/ic_menu_black_48dp.png');
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;
 }
-#toggle-button:active {
+.toggle-buttons:active {
     background-color:#2d4373
 }
-#toggle-background {
+.toggle-background {
     width: 48px;
     height: 48px;
     float: left;
+}
+#menu-toggle-button {
+    background-image: url('../images/ic_menu_black_48dp.png');
 }
 #menu {
     position: fixed;
@@ -149,11 +191,7 @@ button {
     z-index: 101;
     -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
     -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26) -webkit-transition: all .4s ease;
-    -moz-transition: all .4s ease;
-    -ms-transition: all .4s ease;
-    -o-transition: all .4s ease;
-    transition: all .4s ease;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
     background-color: #f7f7f7
 }
 #sidebar {
@@ -172,44 +210,13 @@ button {
     padding: 15px;
     text-align: left;
 }
+#fb-token-control {
+    padding-top:15px;
+}
+#post-message {
+    margin:15px 0;
+}
 #text {
     padding-top: 15px;
     padding-bottom: 15px;
-}
-#game {
-    width: 100%;
-    height: calc(100vh - 48px);
-    position: relative;
-}
-#pause-wrapper {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    margin-top: 48px;
-    position: fixed;
-    z-index: 50;
-    -moz-transition: all .4s ease;
-    -ms-transition: all .4s ease;
-    -o-transition: all .4s ease;
-    transition: all .4s ease;
-}
-#pause {
-    width: 25vw;
-    min-width: 250px;
-    max-width: 500px;
-    min-height: 175px;
-    max-height: 200px;
-    height: 20vh;
-    margin-top: 20vh;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0;
-    background-color: #eee;
-    -moz-transition: all .4s ease;
-    -ms-transition: all .4s ease;
-    -o-transition: all .4s ease;
-    transition: all .4s ease;
-    -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
-    -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26);
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .26)
 }
