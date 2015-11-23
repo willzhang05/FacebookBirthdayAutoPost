@@ -40,14 +40,18 @@ $(window).resize(function() {
 	}
 });
 $(function() {
-    $("#menu-toggle-button").click(function() {
+   $("#menu-toggle-button").click(function() {
         $("#sidebar-wrapper").animate({
-            left: '0'
+            left: '+=200'
         }, 'fast');
+		toggled = true;
     });
-    $("#menu-toggle-button").focusout(function() {
-        $("#sidebar-wrapper").animate({
-            left: '-=200'
-        }, 'fast');
-    });
+	$("body > *").not("#sidebar-wrapper, #sidebar, #menu-buttons").mousedown(function() {
+		if(toggled) {
+			$("#sidebar-wrapper").animate({
+				left: '-=200'
+			}, 'fast');
+			toggled = false;
+		}
+	});
 });
