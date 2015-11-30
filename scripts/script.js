@@ -8,7 +8,7 @@ for (var i = 0; i < 3; i++) {
     } else if (i == 1) {
         template.setAttribute("onclick", "location.href='help.html'");
         template.innerHTML = "Help";
-    } else if (i == 2) {
+    } else {
         template.setAttribute("onclick", "location.href='license.html'");
         template.innerHTML = "License";
     }
@@ -40,14 +40,18 @@ $(window).resize(function() {
 	}
 });
 $(function() {
-    $("#menu-toggle-button").click(function() {
+   $("#menu-toggle-button").click(function() {
         $("#sidebar-wrapper").animate({
-            left: '0'
+            left: '+=200'
         }, 'fast');
+		toggled = true;
     });
-    $("#menu-toggle-button").focusout(function() {
-        $("#sidebar-wrapper").animate({
-            left: '-=200'
-        }, 'fast');
-    });
+	$("body > *").not("#sidebar-wrapper, #sidebar, #menu-buttons").mousedown(function() {
+		if(toggled) {
+			$("#sidebar-wrapper").animate({
+				left: '-=200'
+			}, 'fast');
+			toggled = false;
+		}
+	});
 });
